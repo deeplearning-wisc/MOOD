@@ -161,3 +161,55 @@ optim_group.add_argument('--gamma', default=0.9, type=float, metavar='M',
 optim_group.add_argument('-T', default=3.0, type=float, metavar='M',
                          help='Temperature for KD')
 
+
+
+mood_group = arg_parser.add_argument_group('mood',
+                                           'mood setting')
+
+mood_group.add_argument('-ms', '--score', type=str,
+                    default='energy', 
+                    help='basic score for MOOD method, choose from: energy, msp, odin, mahalanobis')
+
+mood_group.add_argument('-mf', '--file', type=str,
+                    default='trained_model/msdnet_cifar10.pth.tar', 
+                    help='model file for MSDNet')
+mood_group.add_argument('-ml', '--layer', type=int,
+                    default=5, 
+                    help='# of exits for MSDNet')
+
+mood_group.add_argument('-mi', '--id', type=str,
+                    default='cifar10', 
+                    help='in distribution dataset: cifar10 or cifar100')
+mood_group.add_argument('-mo', '--od', type=list, 
+                    default=['mnist',
+                             'kmnist',
+                             'fasionmnist',
+                             'lsun',
+                             'svhn',
+                             'dtd',
+                             'stl10',
+                             'place365',
+                             'isun',
+                             'lsunR'
+                             ],
+                    help='all 10 OOD datasets used in experiment')
+
+mood_group.add_argument('-mc', '--compressor', type=str, 
+                    default='png',
+                    help='compressor for complexity')
+mood_group.add_argument('-mt', '--threshold', type=int, 
+                    default=[0, 
+                             1*2700/5, 
+                             2*2700/5,
+                             3*2700/5,
+                             4*2700/5,
+                             9999],
+                    
+                    help='the complex thresholds for different exits in MSDNet')
+mood_group.add_argument('-ma', '--adjusted', type=int, 
+                    default=1,
+                    help='adjusted energy score: mode 1: minus mean; mode 0: keep as original')
+
+mood_group.add_argument('-mb', '--bs', type=int, 
+                    default=64,
+                    help='batch size')

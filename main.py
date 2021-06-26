@@ -8,8 +8,8 @@ import torchvision.transforms as transforms
 from utils.dataloader import get_dataloader
 from utils.MOOD import get_ood_score, sample_estimator
 from utils.MOOD import auroc, fpr95
-import argparse
-
+#import argparse
+'''
 mood_parser = argparse.ArgumentParser()
 mood_parser.add_argument('-s', '--score', type=str,
                     default='energy', 
@@ -59,45 +59,46 @@ mood_parser.add_argument('-b', '--bs', type=int,
                     default=64,
                     help='batch size')
 mood_args = mood_parser.parse_args()
-
+'''
 
 if 1:#load and test model
     from msd_args import arg_parser
     import models
     from msd_dataloader import msd_get_dataloaders
-    args = arg_parser.parse_args()
-    args.grFactor = list(map(int, args.grFactor.split('-')))
-    args.bnFactor = list(map(int, args.bnFactor.split('-')))
-    args.nScales = len(args.grFactor)
+    mood_args = arg_parser.parse_args()
+    mood_args.grFactor = list(map(int, mood_args.grFactor.split('-')))
+    mood_args.bnFactor = list(map(int, mood_args.bnFactor.split('-')))
+    mood_args.nScales = len(mood_args.grFactor)
     
-    if args.use_valid:
-        args.splits = ['train', 'val', 'test']
+    if mood_args.use_valid:
+        mood_args.splits = ['train', 'val', 'test']
     else:
-        args.splits = ['train', 'val']
-    args.data = mood_args.id
-    if args.data == 'cifar10':
-        args.num_classes = 10
-    elif args.data == 'cifar100':
-        args.num_classes = 100
+        mood_args.splits = ['train', 'val']
+    mood_args.data = mood_args.id
+    if mood_args.data == 'cifar10':
+        mood_args.num_classes = 10
+    elif mood_args.data == 'cifar100':
+        mood_args.num_classes = 100
     else:
         print('dataset not support!')
     
-    model = getattr(models, args.arch)(args)
+    model = getattr(models, mood_args.arch)(mood_args)
     model = torch.nn.DataParallel(model).cuda()
     
     criterion = nn.CrossEntropyLoss().cuda()
 
     cudnn.benchmark = True
 
-    train_loader, val_loader, test_loader = msd_get_dataloaders(args)
+    train_loader, val_loader, test_loader = msd_get_dataloaders(mood_args)
     print("*************************************")
-    print(args.use_valid, len(train_loader), len(val_loader))
+    print(mood_args.use_valid, len(train_loader), len(val_loader))
     print("*************************************")
     
     model.load_state_dict(torch.load(mood_args.file)['state_dict'])
     print(sum(p.numel() for p in model.parameters() if p.requires_grad))
     
     model.eval()
+
 if 1:
     from utils.msdnet_function import validate
     val_loss, val_err1, val_err5 = validate(test_loader, model, criterion)

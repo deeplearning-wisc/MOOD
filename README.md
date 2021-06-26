@@ -70,7 +70,7 @@ For the other 2 in-distribution datasets and 4 out-of-distribution datasets, the
 Here is an example code reproducing the results of MOOD method, the MSDNet is trained on CIFAR-10 and out-of-distribution data includes 10 datasets. In the **root** directory, run
 
 ```
-python main.py -s energy -l 5 -a 1 -c png
+python main.py -ms energy -ml 5 -ma 1 -mc png
 ```
 **Note:** Please choose arguments according to the following.
 

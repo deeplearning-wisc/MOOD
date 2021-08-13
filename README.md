@@ -141,7 +141,7 @@ average           0.9048     0.9128      0.3001     0.2834
 ### For bibtex citation
 ```
 @inproceedings{lin2021mood,
-  author    = {Ziqian Lin, Sreya Dutta Roy, Yixuan Li},
+  author    = {Lin, Ziqian  and Roy, Sreya Dutta  and Li, Yixuan},
   title     = {MOOD: Multi-level Out-of-distribution Detection},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year      = {2021}

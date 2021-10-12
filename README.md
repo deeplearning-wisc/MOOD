@@ -31,7 +31,7 @@ MSDNet          |  94.09      | 75.43
 ## Dataset
 
 ### Description
-We use CIFAR-10 and CIFAR-100 as in-distribution datasets, which are common benchmarks for OOD detection. For the OOD detection evaluation, we consider  a total of 10 datasets with a diverse spectrum of image complexity. In order of increasing complexity, we use MNIST, K-MNIST, fashion-MNIST, LSUN (crop), SVHN, Textures, STL10, Places365, iSUN and LSUN (resize). All images are resized to 32×32 before feeding into the network. For each OOD dataset, we evaluate on the entire test split.  
+We use CIFAR-10 and CIFAR-100 as in-distribution datasets, which are common benchmarks for OOD detection. For the OOD detection evaluation, we consider a total of 9 datasets with a diverse spectrum of image complexity. In order of increasing complexity, we use MNIST, K-MNIST, fashion-MNIST, LSUN (crop), SVHN, Textures, Places365, iSUN and LSUN (resize). All images are resized to 32×32 before feeding into the network. For each OOD dataset, we evaluate on the entire test split.  
 
 ### Downloading Out-of-Distribtion Datasets
 We provide download links of 6 out-of-distributin [datasets](https://drive.google.com/drive/folders/1IRHsD-JRuJP8jUGt0qfFI19-545b3vTd?usp=sharing), please put the unzipped files in the folder '/data'.
@@ -47,7 +47,6 @@ For the other 2 in-distribution datasets and 4 out-of-distribution datasets, the
 	LSUN (crop)                   | google drive
 	SVHN                          | google drive
 	Textures                      | google drive
-	STL10                         | torchvision.datasets
 	Places365                     | google drive
 	isun                          | google drive
 	lsunR                         | google drive
@@ -99,7 +98,6 @@ python main.py -ms energy -ml 5 -ma 1 -mc png
 	LSUN (crop)                   | lsun
 	SVHN                          | svhn
 	Textures                      | dtd
-	STL10                         | stl10
 	Places365                     | place365
 	isun                          | isun
 	lsunR                         | lsunR
@@ -131,11 +129,10 @@ fasionmnist       0.9923     0.9991      0.0248     0.0011
 lsun              0.9873     0.9923      0.0591     0.0320
 svhn              0.9282     0.9649      0.3409     0.1716
 dtd               0.8229     0.8329      0.5537     0.5603
-stl10             0.6017     0.6131      0.8456     0.8439
 place365          0.8609     0.8674      0.4568     0.4687
 isun              0.9384     0.9296      0.3179     0.3882
 lsunR             0.9412     0.9325      0.2911     0.3616
-average           0.9048     0.9128      0.3001     0.2834
+average           0.9384     0.9461      0.2395     0.2212
 ```
 
 ### For bibtex citation

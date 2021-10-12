@@ -1,4 +1,5 @@
 # MOOD: Multi-level Out-of-distribution Detection
+*** STL will be removed from figures later ***
 
 This is a [PyTorch](http://pytorch.org) implementation for detecting out-of-distribution examples in neural networks. The method is described in the paper [MOOD: Multi-level Out-of-distribution Detection](http://arxiv.org/abs/2104.14726) by Ziqian Lin*, Sreya Dutta Roy* and Yixuan Li (*Authors contributed equally.). We propose a novel framework, multi-level out-of-distribution detection (MOOD), which exploits intermediate classifier outputs for dynamic and efficient OOD inference, where easy OOD examples can be effectively detected early without propagating to deeper layers.
 <p align="center">

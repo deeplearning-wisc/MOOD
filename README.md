@@ -23,7 +23,7 @@ The experimental results are shown as follows. The definition of each metric can
 
 ## Pre-trained Models
 
-We provide two pre-trained neural networks: The two [MSDNet](https://drive.google.com/drive/folders/1SxytZVfrV_FWN3BkYl_LyPZKBVqW8LG0?usp=drive_link) networks trained on  CIFAR-10 and CIFAR-100 respectively, please put the unzipped files in the folder '/trained_model'. The test accuracies are given by:
+We provide two pre-trained neural networks: The two [MSDNet](https://drive.google.com/drive/folders/1SxytZVfrV_FWN3BkYl_LyPZKBVqW8LG0?usp=sharing) networks trained on  CIFAR-10 and CIFAR-100 respectively, please put the unzipped files in the folder '/trained_model'. The test accuracies are given by:
 
 Architecture    |  CIFAR-10   | CIFAR-100
 ------------    |  ---------  | ---------

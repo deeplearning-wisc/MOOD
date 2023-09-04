@@ -35,7 +35,7 @@ MSDNet          |  94.09      | 75.43
 We use CIFAR-10 and CIFAR-100 as in-distribution datasets, which are common benchmarks for OOD detection. For the OOD detection evaluation, we consider a total of 9 datasets with a diverse spectrum of image complexity. In order of increasing complexity, we use MNIST, K-MNIST, fashion-MNIST, LSUN (crop), SVHN, Textures, Places365, iSUN and LSUN (resize). All images are resized to 32×32 before feeding into the network. For each OOD dataset, we evaluate on the entire test split.  
 
 ### Downloading Out-of-Distribtion Datasets
-We provide download links of 6 out-of-distributin [datasets](https://drive.google.com/drive/folders/1IRHsD-JRuJP8jUGt0qfFI19-545b3vTd?usp=sharing), please put the unzipped files in the folder '/data'.
+We provide download links of 6 out-of-distributin [datasets](https://drive.google.com/drive/folders/1ypLnPHgnukDO0bJxhDmpSejhxeoJuaPP?usp=sharing), please put the unzipped files in the folder '/data'.
 For the other 2 in-distribution datasets and 4 out-of-distribution datasets, the code will automatically download them since they are included in the torchvision.datasets.
 
 	Datasets                      | Download Through       
